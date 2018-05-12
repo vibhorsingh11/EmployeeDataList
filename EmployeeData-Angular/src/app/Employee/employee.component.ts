@@ -23,6 +23,12 @@ export class EmployeeDataComponent {
             .subscribe((employeeData) => this.employees = employeeData);
     }
 
+    addemployee(employeeForm: NgForm): void {
+        debugger;
+        this._employeeService.post(this.employees)
+            .subscribe((employeeData) => this.employees = employeeData);
+    }     
+
     deleteEmployee(code: string): void {
         this._employeeService.delete(code)
             .subscribe();
